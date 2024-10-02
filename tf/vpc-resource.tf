@@ -7,7 +7,7 @@ resource "aws_vpc" "lms-vpc" {
     }
 }
 resource "aws_subnet" "login-fe-sn" {
-    vpc_id = "aws_vpc.lms-vpc.id"
+    vpc_id = aws_vpc.lms-vpc.id   
     cidr_block = "10.0.1.0/25"
     availability_zone = "us-east-1a"
     map_public_ip_on_launch = "true"
@@ -16,7 +16,7 @@ resource "aws_subnet" "login-fe-sn" {
     }
 }
 resource "aws_subnet" "login-be-sn" {
-    vpc_id = "aws_vpc.lms-vpc.id"
+    vpc_id = aws_vpc.lms-vpc.id
     cidr_block = "10.0.2.0/24"
     availability_zone = "us-east-1c"
     map_public_ip_on_launch = "true"
@@ -25,7 +25,7 @@ resource "aws_subnet" "login-be-sn" {
     }
 }
 resource "aws_subnet" "login_db_sn" {
-    vpc_id = "aws_vpc.lms-vpc.id"
+    vpc_id = aws_vpc.lms-vpc.id
     cidr_block = "10.0.0.0/24"
     availability_zone = "us-east-1b"
     map_public_ip_on_launch = "false"
@@ -34,7 +34,7 @@ resource "aws_subnet" "login_db_sn" {
     }
 }
 resource "aws_internet_gateway" "login-igw" {
-    vpc_id = "aws_vpc.lms-vpc.id"
+    vpc_id = aws_vpc.lms-vpc.id
     tags = {
         Name = "login-IGW"
     }
