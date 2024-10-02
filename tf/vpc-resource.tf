@@ -9,7 +9,7 @@ resource "aws_vpc" "lms-vpc" {
 resource "aws_subnet" "login-fe-sn" {
     vpc_id = "aws_vpc.lms-vpc.id"
     cidr_block = "10.0.1.0/25"
-    availability_zone = "us-east-la"
+    availability_zone = "us-east-1a"
     map_public_ip_on_launch = "true"
     tags = {
         Name = "login-frontend-subnet"
