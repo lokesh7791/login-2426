@@ -34,7 +34,7 @@ resource "aws_subnet" "login_db_sn" {
     }
 }
 resource "aws_internet_gateway" "login-igw" {
-    vpc-id = "aws_vpc.lms-vpc.id"
+    vpc_id = "aws_vpc.lms-vpc.id"
     tags = {
         Name = "login-IGW"
     }
